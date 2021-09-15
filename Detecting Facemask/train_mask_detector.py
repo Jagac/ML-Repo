@@ -1,4 +1,7 @@
-# import the necessary packages
+# Sources Used
+# https://www.youtube.com/watch?v=IOI0o3Cxv9Q
+# https://www.youtube.com/watch?v=Ax6P93r32KU&
+#https://www.youtube.com/watch?v=yqkISICHH-U
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications import MobileNetV2
 from tensorflow.keras.layers import AveragePooling2D
@@ -30,7 +33,6 @@ DIRECTORY = r"C:\Users\Administrator\Documents\GitHub\Big-and-Small-ML-Projects\
 CATEGORIES = ["with_mask", "without_mask"]
 
 # grab the list of images in our dataset directory, then initialize
-# the list of data (i.e., images) and class images
 print("loading images...")
 
 data = []
@@ -83,11 +85,10 @@ headModel = Dropout(0.5)(headModel)
 headModel = Dense(2, activation="softmax")(headModel)
 
 # place the head FC model on top of the base model (this will become
-# the actual model we will train)
+
 model = Model(inputs=baseModel.input, outputs=headModel)
 
-# loop over all layers in the base model and freeze them so they will
-# *not* be updated during the first training process
+
 for layer in baseModel.layers:
 	layer.trainable = False
 
@@ -111,7 +112,7 @@ print("evaluating network...")
 predIdxs = model.predict(testX, batch_size=BS)
 
 # for each image in the testing set we need to find the index of the
-# label with corresponding largest predicted probability
+
 predIdxs = np.argmax(predIdxs, axis=1)
 
 # show a nicely formatted classification report
