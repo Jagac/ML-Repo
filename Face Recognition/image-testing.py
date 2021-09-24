@@ -2,7 +2,7 @@ import cv2
 import os 
 import numpy as np
 import face_recognition as fr
-
+#test
 test_img=cv2.imread(r'C:\Users\Administrator\Documents\GitHub\Big-and-Small-ML-Projects\Face Recognition\Test Images\test.jpeg')
 faces_detected, gray_img = fr.faceDetection(test_img)
 print('faces detected:', faces_detected)
