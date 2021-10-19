@@ -1,6 +1,6 @@
 # Starbucks ML Project
 
-## Overview
+## Goal
 Predicting the purchase offer to which a possible higher level of response or user actions like ‘offer received’, ‘offer viewed’, ‘transaction’ and ‘offer completed’ can be achieved based on the demographic attributes of the customer and other attributes of the companies purchase offers.
 
 ## Datasets
