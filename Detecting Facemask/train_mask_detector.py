@@ -1,6 +1,5 @@
 # Sources Used
 # https://www.youtube.com/watch?v=IOI0o3Cxv9Q
-# https://www.youtube.com/watch?v=Ax6P93r32KU&
 #https://www.youtube.com/watch?v=yqkISICHH-U
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications import MobileNetV2
