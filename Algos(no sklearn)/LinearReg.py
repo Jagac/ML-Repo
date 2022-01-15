@@ -14,7 +14,7 @@ class LinearRegression:
         self.bias = 0
 
         for _ in range(self.n_iters):
-            y_predicted = np.dot(X,self.weights) + bias
+            y_predicted = np.dot(X,self.weights) + self.bias
             dw = (1/n_samples) * np.dot(X.T,(y_predicted-y))
             db = (1/n_samples) * np.sum(y_predicted-y)
 
@@ -22,5 +22,5 @@ class LinearRegression:
             self.bias -= self.lr * db
 
     def predict(self, X):
-        y_predicted = np.dot(X,self.weights) + bias
+        y_predicted = np.dot(X,self.weights) + self.bias
         return y_predicted
