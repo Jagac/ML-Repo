@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib. pyplot as plt
 from keras.layers import *
 from keras.models import *
-import keras.backend as K
+import keras.backend as K 
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import TimeSeriesSplit
 
@@ -33,7 +33,7 @@ lstm.add(Dense(1))
 lstm.compile(loss='mean_squared_error', optimizer='adam')
 
 lstm.fit(X_train, y_train, epochs=100, batch_size=32)
-
+ 
 y_pred= lstm.predict(X_test)
 plt.plot(y_test, label='True Value')
 plt.plot(y_pred, label='LSTM Value')
